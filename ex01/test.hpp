@@ -16,4 +16,4 @@
     std::cout << YELLOW << "--- " << text << " ---" << RESET << "\n"
 
 
-void testEx00();
+void testEx01();
