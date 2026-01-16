@@ -3,7 +3,8 @@
 
 #include<set>
 #include <stdexcept>
-#include<iterator>
+#include <iterator>
+#include <iostream>
 
 class Span
 {
@@ -21,12 +22,13 @@ class Span
 	int		longestSpan() const;
 	void	addNumber(int num);
 	template<typename typeIterator>
-	void	addNumber(typeIterator& begin, typeIterator& end)
+	void	addNumber(typeIterator begin, typeIterator end)
 	{
-		if (std::distance(begin, end) + elements_.size() > N_)
+		if (static_cast<unsigned int>(std::distance(begin, end)) + elements_.size() > N_)
 			throw std::runtime_error("can't add number: more than max size");
 		elements_.insert(begin, end);
 	}
+	void	printElements() const;
 };
 
 #endif // !SPAN_HPP

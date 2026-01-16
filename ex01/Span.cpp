@@ -2,9 +2,9 @@
 
 static const unsigned int MIN_ELEMENTS_FOR_SPAN = 2;
 
-Span::Span():elements_(std::multiset<int>()), N_(0){}
+Span::Span(): N_(0){}
 
-Span::Span(unsigned int maxSize): elements_(std::multiset<int>()), N_(maxSize){}
+Span::Span(unsigned int maxSize): N_(maxSize){}
 
 Span::Span(const Span& other): elements_(other.elements_), N_(other.N_) {}
 
@@ -49,5 +49,14 @@ int	Span::longestSpan() const
 	if (elements_.size() < MIN_ELEMENTS_FOR_SPAN)
 		throw std::runtime_error("can't find longestSpan: need minium 2 numbers stored");
 	return (*elements_.rbegin() - *elements_.begin());
+}
+
+void Span::printElements() const
+{
+	std::cout << "elements are:\n";
+	for (std::multiset<int>::iterator it = elements_.begin(); it != elements_.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+
 }
 
