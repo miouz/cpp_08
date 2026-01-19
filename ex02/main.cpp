@@ -67,16 +67,20 @@ int main()
 	mstack.push(737);
 	//[...]
 	mstack.push(0);
-	MutantStack<int>::const_iterator it = mstack.cbegin();
-	MutantStack<int>::const_iterator ite = mstack.cend();
-	++it;
-	--it;
+	// MutantStack<int>::const_iterator it = mstack.cbegin();
+	// MutantStack<int>::const_iterator ite = mstack.cend();
+	// ++it;
+	// --it;
 	// *it = 9;
 	//*ite = 10;
-	while (it != ite)
+	std::cout << "test for copy constructor\n";
+	MutantStack<int> copy(mstack);
+	MutantStack<int>::iterator it_copy = copy.begin();
+	MutantStack<int>::iterator ite_copy = copy.end();
+	while (it_copy != ite_copy)
 	{
-	std::cout << *it << std::endl;
-	++it;
+	std::cout << *it_copy << std::endl;
+	++it_copy;
 	}
 	std::stack<int> s(mstack);
 	}
