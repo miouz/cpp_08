@@ -47,7 +47,7 @@ int	Span::shortestSpan() const
 int	Span::longestSpan() const
 {
 	if (elements_.size() < MIN_ELEMENTS_FOR_SPAN)
-		throw std::runtime_error("can't find longestSpan: need minium 2 numbers stored");
+		throw std::runtime_error("can't find longestSpan: need minimum 2 numbers stored");
 	return (*elements_.rbegin() - *elements_.begin());
 }
 
