@@ -1,5 +1,6 @@
 #include "test.hpp"
 #include <fstream>
+#include <vector>
 
 void testEx01()
 {
@@ -134,6 +135,7 @@ void testEx01()
 			} catch (std::exception& e) {
 				std::cout << e.what()<< std::endl;
 			}
+		}
 
 		PRINT_SUBHEADER("find longest span of 4 element array");
 		{
